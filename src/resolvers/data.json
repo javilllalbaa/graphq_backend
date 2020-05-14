@@ -1,0 +1,29 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Javier Alexander Villalba",
+            "username": "Javi",
+            "email": "Javi@gmail.com",
+            "password": "fsddsjfldsmfñdm"
+        }
+    ],
+    "products": [
+        {
+            "id": 1,
+            "name": "Test",
+            "description": "This is test",
+            "price": "2000",
+            "img": null,
+            "username": 1
+        },
+        {
+            "id": 2,
+            "name": "Test 2",
+            "description": "This is test 2",
+            "price": "20002",
+            "img": null,
+            "username": 1
+        }
+    ]
+}

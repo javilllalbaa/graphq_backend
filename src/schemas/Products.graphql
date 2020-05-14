@@ -1,0 +1,17 @@
+type Product {
+    id: Int!
+    name: String!
+    description: String!
+    price: String!
+    img: String!
+    username: Int!
+}
+
+input ProductInput {
+    id: Int!
+    name: String!
+    description: String!
+    price: String!
+    img: String!
+    username: Int!
+}

@@ -1,0 +1,46 @@
+{
+    "name": "graphq_backend",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+      "build": "babel src -d dist --source-maps",
+      "start_": "nodemon src/index.js --exec babel-node",
+      "start": "nodemon src/index.js",
+      "serve": "node dist/index.js",
+      "clear": "rimraf dist"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+      "express": "^4.17.1",
+      "express-graphql": "^0.9.0",
+      "graphql": "^15.0.0",
+      "graphql-server-express": "^1.4.1",
+      "graphql-tools": "^5.0.0",
+      "lodash": "^4.17.15",
+      "rimraf": "^3.0.2"
+    },
+    "devDependencies": {
+      "@babel/cli": "^7.8.4",
+      "@babel/core": "^7.9.6",
+      "@babel/node": "^7.8.7",
+      "@babel/preset-env": "^7.9.6",
+      "nodemon": "^2.0.3"
+    },
+    "eslintConfig": {
+      "parser": "babel-eslint",
+      "extends": [
+        "airbnb/base",
+        "plugin:import/errors"
+      ],
+      "rules": {
+        "no-use-before-define": 0,
+        "arrow-body-style": 0,
+        "dot-notation": 0,
+        "no-console": 0
+      }
+    }  
+  }
+  

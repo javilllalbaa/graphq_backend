@@ -1,0 +1,7 @@
+type Query {
+    users (name: [String]): [User]
+    getUser: [User]
+    loginUser(email: [String], password: [String]): Token 
+    products: [Product]
+    example(id: [Int]): [Product]
+}

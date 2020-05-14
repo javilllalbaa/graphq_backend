@@ -1,0 +1,24 @@
+type User {
+    _id: ID
+    name: String!
+    username: String!
+    email: String!
+    password: String!
+}
+
+type Token{
+   token: String 
+}
+
+input UserUpdate {
+    name: String
+    username: String
+    email: String
+}
+
+input UserInput {
+    name: String!
+    username: String!
+    email: String!
+    password: String!
+}

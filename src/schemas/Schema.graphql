@@ -1,4 +1,71 @@
-schema {
-  query: Query
-  mutation: Mutation
+type Mutation {
+    createUser (input: UserInput): User
+    updateUser(_id: ID, input: UserUpdate): User
+    deleteUser(id: ID): User
+    loginUser(input: Login): Token
+    createProduct(input: ProductInput): Product
+    updateProduct(_id: ID, input: ProductProduct): Product
+    deleteProduct(id: ID): Product
+}
+
+type Query {
+    users (name: [String]): [User]
+    getUser: [User] 
+    getProductos: [Product]
+}
+
+type Product {
+    id: Int!
+    name: String!
+    description: String!
+    price: String!
+    img: String!
+    username: Int!
+}
+
+input ProductInput {
+    id: Int!
+    name: String!
+    description: String!
+    price: String!
+    img: String!
+    username: Int!
+}
+
+type User {
+    _id: ID
+    name: String!
+    username: String!
+    email: String!
+    password: String!
+}
+
+type Token{
+   token: String 
+}
+
+input ProductProduct {
+    name: String
+    description: String
+    price: String
+    img: String
+    username: Int
+}
+
+input UserUpdate {
+    name: String
+    username: String
+    email: String
+}
+
+input Login {
+    email: String
+    password: String
+}
+
+input UserInput {
+    name: String!
+    username: String!
+    email: String!
+    password: String!
 }

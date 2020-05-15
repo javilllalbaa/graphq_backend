@@ -1,13 +1,24 @@
-let data = require('./data.json');
+
+import Product from './../models/Product'
 
 const productResolver = {
     Query: {
-        products() {
-            return data.products
+        async getProductos(){
+            const all_productos = await Product.find() 
+            return all_productos
+        }
+    },
+    Mutation: {
+        async createProduct(root, { input }) {
+            const newProduct = new Product(input)
+            await newProduct.save()
+            return newProduct
+        },        
+        async updateProduct(root, { _id, input }) {
+            return await Product.findByIdAndUpdate(_id, input, {new: true})
         },
-        example(root, { id }){
-            console.log("Test...", id)
-            return data.products.filter(p => p.id == id)
+        async deleteProduct(root, { _id }) {
+            return await Product.findByIdAndDelete(_id)
         }
     }
 };

@@ -1,5 +1,0 @@
-type Mutation {
-    createUser (input: UserInput): User
-    updateUser(_id: ID, input: UserUpdate): User
-    deleteUser(id: ID): User
-}

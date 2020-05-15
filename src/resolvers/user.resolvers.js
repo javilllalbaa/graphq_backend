@@ -4,16 +4,9 @@ import { generateToken } from './../service/sessions'
 
 const userResolver = {
     Query: {
-        products() {
-            return data.users
-        },
         async getUser(){
             const all_user = await User.find() 
             return all_user
-        },
-        async loginUser(root, { email, password }){
-            const user_login = await User.find( { email: email, password: password } )
-            return generateToken(user_login[0])
         }
     },
     Mutation: {
@@ -28,6 +21,11 @@ const userResolver = {
         },
         async deleteUser(root, { _id }) {
             return await User.findByIdAndDelete(_id)
+        },
+        async loginUser(root, { _id, input }) {
+            console.log(input.email, input.password)
+            const user_login = await User.find( { email: input.email, password: input.password } )
+            return generateToken(user_login[0])
         }
     }
 }

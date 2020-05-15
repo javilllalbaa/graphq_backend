@@ -1,12 +1,8 @@
-import mongoose from "mongoose"
+import mongoose from 'mongoose'
 
-export async function connect(){
-    try{
-        await mongoose.connect('mongodb://localhost/mongodbgraphql', {useNewUrlParser: true, useUnifiedTopology: true})
-        console.log('>>> DB is connected')
-    }
-    catch(e){
-        console.log('Something goes wrong')
-        console.log("Error...", e)
-    }
-}
+mongoose.connect('mongodb://localhost/test_db', {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+  .then(db => console.log('Db is connected'))
+  .catch(err => console.log(err));
